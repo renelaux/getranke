@@ -73,7 +73,7 @@
         if (qty) {
           const row = document.createElement('div');
           row.className = 'row';
-          row.innerHTML = `<span>${qty} Ã— ${p.name}</span><strong>${euro(qty * p.price)}</strong>`;
+          row.innerHTML = `<span>${qty} x ${p.name}</span><strong>${euro(qty * p.price)}</strong>`;
           breakdownEl.appendChild(row);
         }
         total += qty * p.price;
