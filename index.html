@@ -4,27 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#01696f">
-  <meta name="description" content="Getränkerechner für den Tresen als installierbare PWA.">
+  <meta name="description" content="GetrÃ¤nkerechner fÃ¼r den Tresen als installierbare PWA.">
   <link rel="manifest" href="manifest.webmanifest">
   <title>getraenkerechner-pwa</title>
   <style>
-    *,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark;-webkit-text-size-adjust:none;text-size-adjust:none}body{margin:0;min-height:100dvh;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f7f6f2;color:#28251d}button,input{font:inherit}button{border:0;background:none;color:inherit}main{max-width:980px;margin:0 auto;padding:16px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}h1{font-size:clamp(1.25rem,3vw,1.8rem);margin:0}small{color:#7a7974}.topbar{display:flex;gap:8px;flex-wrap:wrap}.pill{padding:10px 14px;border-radius:999px;background:#fbfbf9;border:1px solid #d4d1ca}.summary{position:sticky;top:8px;z-index:2;margin:0 0 16px;padding:16px;border-radius:20px;background:#01696f;color:#f9f8f4;box-shadow:0 12px 32px rgba(0,0,0,.12)}.summary-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.total{font-size:clamp(2rem,7vw,4rem);font-weight:800;line-height:1}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.card{background:#f9f8f5;border:1px solid #d4d1ca;border-radius:20px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,.08)}.card h2{font-size:1.1rem;margin:0 0 10px}.price{font-size:1rem;color:#7a7974;margin-bottom:10px}.controls{display:grid;grid-template-columns:44px 1fr 44px;gap:8px;align-items:center}.qty{width:100%;text-align:center;padding:12px 8px;border-radius:14px;border:1px solid #d4d1ca;background:#fff}.btn{display:grid;place-items:center;min-width:44px;min-height:44px;border-radius:14px;background:#01696f;color:#fff;font-size:1.4rem;font-weight:800}.btn.secondary{background:#edeae5;color:#28251d}.footer-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.action{min-height:56px;border-radius:18px;font-weight:700;font-size:1rem}.action.primary{background:#01696f;color:#fff}.action.ghost{background:#fbfbf9;border:1px solid #d4d1ca}.line{height:1px;background:#dcd9d5;margin:12px 0}.breakdown{display:flex;flex-direction:column;gap:8px}.row{display:flex;justify-content:space-between;gap:12px;font-size:1rem}.muted{color:#7a7974}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#cedcd8;color:#0f3638;font-weight:700}.toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);padding:12px 16px;border-radius:999px;background:#28251d;color:#f9f8f4;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}@media (prefers-color-scheme: dark){body{background:#171614;color:#cdccca}.pill,.card,.action.ghost,.qty{background:#1c1b19;border-color:#393836;color:#cdccca}.muted,.price,small{color:#797876}.summary{background:#4f98a3;color:#171614}.btn.secondary{background:#22211f;color:#cdccca}.badge{background:#313b3b;color:#cdccca}.line{background:#262523}}</style>
+    *,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark;-webkit-text-size-adjust:none;text-size-adjust:none}body{margin:0;min-height:100dvh;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f7f6f2;color:#28251d}button,input{font:inherit}button{border:0;background:none;color:inherit}main{max-width:980px;margin:0 auto;padding:16px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}h1{font-size:clamp(1.25rem,3vw,1.8rem);margin:0}small{color:#7a7974}.topbar{display:flex;gap:8px;flex-wrap:wrap}.pill{padding:10px 14px;border-radius:999px;background:#fbfbf9;border:1px solid #d4d1ca}.summary{position:sticky;top:8px;z-index:2;margin:0 0 16px;padding:16px;border-radius:20px;background:#01696f;color:#f9f8f4;box-shadow:0 12px 32px rgba(0,0,0,.12)}.summary-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.total{font-size:clamp(2rem,7vw,4rem);font-weight:800;line-height:1}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.card{background:#f9f8f5;border:1px solid #d4d1ca;border-radius:20px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,.08)}.card h2{font-size:1.05rem;line-height:1.2;margin:0 0 8px}.price{font-size:.98rem;color:#7a7974;margin-bottom:10px}.drink-btn{width:100%;min-height:64px;padding:12px 14px;border-radius:16px;background:#01696f;color:#fff;font-size:1.05rem;font-weight:800;line-height:1.2;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;flex-direction:column}.drink-btn span{display:block}.drink-btn .name{font-size:1.08rem}.drink-btn .price-inline{font-size:.95rem;font-weight:700;opacity:.95}.footer-actions{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}.action{min-height:56px;border-radius:18px;font-weight:700;font-size:1rem}.action.primary{background:#01696f;color:#fff}.action.ghost{background:#fbfbf9;border:1px solid #d4d1ca}.line{height:1px;background:#dcd9d5;margin:12px 0}.breakdown{display:flex;flex-direction:column;gap:8px}.row{display:flex;justify-content:space-between;gap:12px;font-size:1rem}.muted{color:#7a7974}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#cedcd8;color:#0f3638;font-weight:700}.toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);padding:12px 16px;border-radius:999px;background:#28251d;color:#f9f8f4;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}@media (prefers-color-scheme: dark){body{background:#171614;color:#cdccca}.pill,.card,.action.ghost{background:#1c1b19;border-color:#393836;color:#cdccca}.muted,.price,small{color:#797876}.summary{background:#4f98a3;color:#171614}.badge{background:#313b3b;color:#cdccca}.line{background:#262523}.drink-btn{background:#4f98a3;color:#171614}}</style>
 </head>
 <body>
   <main>
     <header>
       <div>
-        <h1>Getränkerechner</h1>
-        <small>Für mobilen Einsatz am Tresen</small>
+        <h1>GetrÃ¤nkerechner</h1>
+        <small>FÃ¼r mobilen Einsatz am Tresen</small>
       </div>
       <div class="topbar">
-        <span class="pill badge" id="itemCount">0 Getränke</span>
+        <span class="pill badge" id="itemCount">0 GetrÃ¤nke</span>
       </div>
     </header>
 
     <section class="summary" aria-live="polite">
       <div class="summary-row"><span>Gesamt</span><span class="muted">Barzahlung</span></div>
-      <div class="total" id="total">0,00 €</div>
+      <div class="total" id="total">0,00 â‚¬</div>
       <div class="line"></div>
       <div class="breakdown" id="breakdown"></div>
     </section>
@@ -33,10 +33,9 @@
 
     <section class="footer-actions">
       <button class="action ghost" id="resetBtn">Neuer Kunde</button>
-      <button class="action primary" id="copyBtn">Betrag merken</button>
     </section>
   </main>
-  <div class="toast" id="toast">Gesamtbetrag kopiert</div>
+  <div class="toast" id="toast">GetrÃ¤nk hinzugefÃ¼gt</div>
   <script>
     const products = [
       {id:'wasser', name:'Wasser', price:2.5},
@@ -57,13 +56,10 @@
     function render(){
       productsEl.innerHTML = products.map(p => `
         <article class="card">
-          <h2>${p.name}</h2>
-          <div class="price">${euro(p.price)} pro Stück</div>
-          <div class="controls">
-            <button class="btn secondary" data-dec="${p.id}" aria-label="${p.name} verringern">−</button>
-            <input class="qty" inputmode="numeric" pattern="[0-9]*" value="${state[p.id]}" data-input="${p.id}" aria-label="Menge ${p.name}">
-            <button class="btn" data-inc="${p.id}" aria-label="${p.name} erhöhen">+</button>
-          </div>
+          <button class="drink-btn" data-inc="${p.id}" aria-label="${p.name} hinzufÃ¼gen">
+            <span class="name">${p.name}</span>
+            <span class="price-inline">${euro(p.price)}</span>
+          </button>
         </article>
       `).join('');
       update();
@@ -77,41 +73,31 @@
         if (qty) {
           const row = document.createElement('div');
           row.className = 'row';
-          row.innerHTML = `<span>${qty} × ${p.name}</span><strong>${euro(qty * p.price)}</strong>`;
+          row.innerHTML = `<span>${qty} Ã— ${p.name}</span><strong>${euro(qty * p.price)}</strong>`;
           breakdownEl.appendChild(row);
         }
         total += qty * p.price;
         count += qty;
       });
       totalEl.textContent = euro(total);
-      itemCountEl.textContent = `${count} ${count === 1 ? 'Getränk' : 'Getränke'}`;
-      if (!count) breakdownEl.innerHTML = '<div class="muted">Noch keine Getränke hinzugefügt.</div>';
+      itemCountEl.textContent = `${count} ${count === 1 ? 'GetrÃ¤nk' : 'GetrÃ¤nke'}`;
+      if (!count) breakdownEl.innerHTML = '<div class="muted">Noch keine GetrÃ¤nke hinzugefÃ¼gt.</div>';
     }
 
     productsEl.addEventListener('click', e => {
-      const inc = e.target.dataset.inc, dec = e.target.dataset.dec;
-      if (inc) state[inc] = (state[inc] || 0) + 1;
-      if (dec) state[dec] = Math.max(0, (state[dec] || 0) - 1);
-      render();
-    });
-
-    productsEl.addEventListener('input', e => {
-      const id = e.target.dataset.input;
-      if (!id) return;
-      state[id] = Math.max(0, parseInt(e.target.value || '0', 10) || 0);
+      const btn = e.target.closest('[data-inc]');
+      if (!btn) return;
+      const inc = btn.dataset.inc;
+      state[inc] = (state[inc] || 0) + 1;
       update();
+      toast.textContent = `${products.find(p => p.id === inc).name} hinzugefÃ¼gt`;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 900);
     });
 
     document.getElementById('resetBtn').addEventListener('click', () => {
       products.forEach(p => state[p.id] = 0);
       render();
-    });
-
-    document.getElementById('copyBtn').addEventListener('click', async () => {
-      const text = totalEl.textContent;
-      try { await navigator.clipboard.writeText(text); } catch(e) {}
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 1200);
     });
 
     if ('serviceWorker' in navigator) {
