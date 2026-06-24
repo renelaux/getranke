@@ -38,16 +38,17 @@
       {id:'pils', name:'Pils gez.', price:2.5},
       {id:'weizen', name:'Weizen gez., Weizen 0.0', price:3.0},
       // {id:'weizen00', name:'Weizen 0.0', price:3.0},
+      {id:'wasser', name:'Wasser, Soft, Malz', price:1.5},
       {id:'bier', name:'Stubbi, Radler 0.0', price:2.5},
       {id:'eistee', name:'Korn Eistee', price:3.0},
       {id:'lillet', name:'Lillet', price:2.0},
-      {id:'wasser', name:'Wasser, Soft, Malz', price:1.5},
+      {id:'flasche_lillet', name:'Lillet, Flasche', price:6.0},
       // {id:'limo', name:'Cola, Limo, Malz', price:1.5},
       {id:'meter', name:'Meter Pils', price:25.0},
       {id:'meterw', name:'Meter Weizen', price:30.0},
-      {id:'kiste', name:'Kiste', price:45.0},
       {id:'meter_eistee', name:'Meter Korn Eistee', price:30.0},
-      {id:'flasche_lillet', name:'Lillet, Flasche', price:6.0}
+      {id:'kiste', name:'Kiste', price:45.0}
+      
     ];
     const state = Object.fromEntries(products.map(p => [p.id, 0]));
     const euro = n => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
